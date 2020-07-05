@@ -1,9 +1,9 @@
-<h1>My tasks</h1>
-<div>
-  <ul>
+<div class='container'>
+  <h1>My tasks</h1>
+  <ul class="list-group-flush">
     <% @tasks.each do |task|%>
-    <li><%= check_box("display", task.completed) %> <%= link_to "#{task.title}", task_path(task.id) %></li>
+    <li class="list-group-item"><%= check_box("display", task) %> <%= link_to "#{task.title}", task_path(task.id) %></li>
     <% end %>
   </ul>
+  <%= link_to "Add a new task", new_task_path %>
 </div>
-<%= link_to "Add a new task", new_task_path %>
